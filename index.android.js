@@ -6,7 +6,8 @@ import React from 'react';
 import { View, AppRegistry } from 'react-native';
 //importing header
 import Header from './src/components/Header';
-import AlbumList from './src/components/AlbumList';
+//import AlbumList from './src/components/AlbumList';
+import DeputadoList from './src/deputados/DeputadoList';
 
 //Create a component
 /*
@@ -18,8 +19,8 @@ const App = () => {
 */
 const App = () => (
   <View style={{ flex: 1 }}>
-    <Header headerText={'Albums'} />
-    <AlbumList />
+    <Header headerText={'Deputados'} />
+    <DeputadoList />
   </View>
 );
 
