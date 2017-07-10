@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, Button } from 'react-native';
 import Card from '../components/Card';
 import CardSection from '../components/CardSection';
+import MyButton from '../components/MyButton';
 
 const DeputadoDetail = ({ dados }) => {
   
@@ -27,8 +28,26 @@ const DeputadoDetail = ({ dados }) => {
       height: 300,
       flex: 1,
       width: null
+    },
+    buttonStyle: {
+      flex: 1,
+      alignSelf: 'stretch',
+      backgroundColor: '#FFF',
+      borderRadius: 5,
+      borderWidth: 1,
+      borderColor: '#007AFF',
+      marginLeft: 5,
+      marginRight: 5
+    },
+    buttonTextStyle: {
+      alignSelf: 'center',
+      color: '#007AAF',
+      fontSize: 16,
+      fontWeight: '600',
+      paddingTop: 10,
+      paddingBottom: 10
     }
-  };
+  };   
   
   const { 
     id,
@@ -41,8 +60,14 @@ const DeputadoDetail = ({ dados }) => {
     headerContentStyle, 
     thumbnailContainerStyle,
     headerTextStyle,
-    imageStyle
+    imageStyle,
+    buttonStyle,
+    buttonTextStyle
   } = styles;
+
+  function buttonPress() {
+    this.Text = 'I was pressed!';
+  }
 
   return (
     <Card>
@@ -57,6 +82,13 @@ const DeputadoDetail = ({ dados }) => {
           <Text style={headerTextStyle}>{nome}</Text>
           <Text>{partido}</Text>
         </View>
+      </CardSection>
+      <CardSection>
+        <Button 
+          style={buttonStyle}
+          title='Click me!' 
+          onPress={buttonPress}
+        />
       </CardSection>
     </Card>
   );
