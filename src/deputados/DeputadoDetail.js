@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, Button } from 'react-native';
+import { View, Image, Text, Linking } from 'react-native';
 import Card from '../components/Card';
 import CardSection from '../components/CardSection';
 import MyButton from '../components/MyButton';
@@ -52,7 +52,8 @@ const DeputadoDetail = ({ dados }) => {
   const { 
     id,
     nome, 
-    partido    
+    partido,
+    url 
   } = dados;
   
   const { 
@@ -64,10 +65,6 @@ const DeputadoDetail = ({ dados }) => {
     buttonStyle,
     buttonTextStyle
   } = styles;
-
-  function buttonPress() {
-    this.Text = 'I was pressed!';
-  }
 
   return (
     <Card>
@@ -84,11 +81,9 @@ const DeputadoDetail = ({ dados }) => {
         </View>
       </CardSection>
       <CardSection>
-        <Button 
-          style={buttonStyle}
-          title='Click me!' 
-          onPress={buttonPress}
-        />
+        <MyButton onPress={
+          () => 
+          Linking.openURL('https://www.almg.gov.br/deputados/conheca_deputados/deputados-info.html?idDep=' + id + '&leg=18')} />
       </CardSection>
     </Card>
   );
