@@ -72,7 +72,7 @@ const DeputadoDetail = ({ dados }) => {
         <View style={thumbnailContainerStyle}>
           <Image 
             style={thumbnailStyle} 
-            source={{ uri: 'https://www.almg.gov.br/export/sites/default/deputados/fotos/' + id + '.jpg' }} 
+            source={{ uri: 'https://www.almg.gov.br/export/sites/default/deputados/fotos/' + id + '.jpg'}} 
           />
         </View>
         <View style={headerContentStyle}>
